@@ -1,10 +1,19 @@
 package com.company;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Lesson2 {
+    public static void main(String[] args) {
+        //   System.out.println(factorial(10));
+
+        // hw3_4();
+        hw3_7();
+    }
+
     // Логика. Логические конструкции. Ветвления. Циклы
     public static void example1() {
         boolean isCondition;  // true, false
@@ -205,10 +214,10 @@ public class Lesson2 {
     }
 
     // Цикл бесконечный
-    public static void exampleLoops2(){
+    public static void exampleLoops2() {
         boolean flag = true;
 
-        while(flag){
+        while (flag) {
             System.out.println();
         }
 
@@ -216,7 +225,7 @@ public class Lesson2 {
     }
 
     // Фича с одной командой
-    public static void oneCommandExample(){
+    public static void oneCommandExample() {
         int a = 20;
 
         if (a > 10)
@@ -224,5 +233,75 @@ public class Lesson2 {
 
         for (int i = 0; i < 10; i++)
             System.out.println(a);
+    }
+
+    // Простой вариант, разить известное число на разряды
+    public static void hw2_7() {
+        int a = 567;
+
+        // Фича
+        int сотые = a / 100; // 5
+        int десятки = (a - сотые * 100) / 10; // 6
+        int единицы = (a - сотые * 100 - десятки * 10); // 7
+
+        int b = 567;
+        int opr2 = 100;
+        int result = 0;
+
+        while (opr2 >= 1) {
+            result = b / opr2;
+            System.out.println(result);
+            b = b % opr2;
+            opr2 = opr2 / 10;
+        }
+    }
+
+    public static void hw3_4() {
+        Scanner scanner = new Scanner(System.in);
+        int n = 30;
+        double z = 0;
+
+        // Вводимая пользователем
+        double x = 0;
+
+        for (int i = 1; i <= 20; i++) {
+            for (int k = 1; k < n; k++) {
+                System.out.print("Введите х: ");
+                x = scanner.nextDouble();
+
+                int fact = 1;
+                for (int j = 2; j <= k; j++) {
+                    fact *= i;
+                }
+
+                z = Math.pow(x, k) / fact;
+
+                System.out.println(z);
+            }
+        }
+    }
+
+    public static void hw3_7() {
+        int counter = 0;
+        int h = 1;
+
+        for (int i = 100; counter < 15; i += h) {
+            if (i % 19 == 0) {
+                ++counter;
+                System.out.println("Число с индексом " + counter + ", значение - " + i);
+                h = 19;
+                }
+        }
+    }
+
+    // Факториал
+    public static int factorial(int num) {
+        int result = 1;
+
+        for (int i = 2; i <= num; i++) {
+            result *= i;
+        }
+
+        return result;
     }
 }
