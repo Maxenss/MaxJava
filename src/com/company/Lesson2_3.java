@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lesson2 {
+public class Lesson2_3 {
+
     public static void main(String[] args) {
         //   System.out.println(factorial(10));
 
@@ -290,8 +291,63 @@ public class Lesson2 {
                 ++counter;
                 System.out.println("Число с индексом " + counter + ", значение - " + i);
                 h = 19;
-                }
+            }
         }
+    }
+
+    public static void hw3_2() {
+        int num = 2324;
+        int opr2 = 1000;
+
+        int a = 2;
+        int b = 3;
+
+        int a_counter = 0;
+        int b_counter = 0;
+
+        while (num >= 1) {
+            int result = b / opr2;
+            // System.out.println(result);
+            num = num % opr2;
+            opr2 = opr2 / 10;
+
+            if (result == a)
+                ++a_counter;
+
+            if (result == b)
+                ++b_counter;
+        }
+
+        if (a_counter > b_counter) {
+            System.out.println("Число a встречается чаще");
+        } else if (a_counter == b_counter)
+            System.out.println("Число a и b встречается одинаково часто");
+        else {
+            System.out.println("Число b встречается чаще");
+        }
+    }
+
+    public static void hw3_9() {
+        int a = 2;
+        int b = 4;
+        int sum = a; // 2
+        int z = 1000;
+        int i = 1;
+
+        int current = 0;
+
+        // Через for
+        for (; ; i++) {
+            current = a + (i * b);
+            sum += current;   // +4
+
+            if (z > sum) {
+                System.out.println("Сумма - " + sum);
+                System.out.println("Необходимое кол-во членов прогресии - " + i);
+                System.out.println("Последний член ряда: " + sum);
+            }
+        }
+
     }
 
     // Факториал
