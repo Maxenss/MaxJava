@@ -16,6 +16,7 @@ public class Lesson4 {
 
         // Объвление массива
         int[] arrayNew;         // null
+        System.out.println();
         // Инициализация массива
         arrayNew = new int[10]; // Создать в памяти массив элементов типа int на 10 ячеек
         // Одновременно
